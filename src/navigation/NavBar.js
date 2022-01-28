@@ -1,18 +1,15 @@
-
+import {NavLink} from "react-router-dom";
+import Home from "../components/Home";
 function NavBar(){
 
     return(
-        <nav>
-            <ul>
-                <li>
-                    Home
-                    About
-                    People
-                    Add person
-                </li>
-            </ul>
-        </nav>
-    )
+        <div>
+      <NavLink exact to="/">
+          < Home/>
+
+      </NavLink> 
+       </div>
+    );
 }
 
 export default NavBar
