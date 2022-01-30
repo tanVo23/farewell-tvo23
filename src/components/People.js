@@ -7,4 +7,4 @@ function People(){
     );
 }
 
-export default People
+export default People;

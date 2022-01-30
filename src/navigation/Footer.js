@@ -3,7 +3,9 @@ function Footer(){
 
     return(
         <footer>
-            Tan
+            tv production
         </footer>
     )
 }
+
+export default Footer;
