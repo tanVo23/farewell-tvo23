@@ -1,8 +1,11 @@
+import People from "../components/People";
 
-function PeopleContainer() {
+function PeopleContainer({people}) {
 
     return(
-        <div>PeopleContainer</div>
+        <ul>
+            {people.map(people => <People key={people.id} people={people} /> )}
+        </ul>
     );
 }
 

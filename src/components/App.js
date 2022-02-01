@@ -3,13 +3,29 @@ import NavBar from '../navigation/NavBar';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Header from '../navigation/Header'
-import People from './People';
+//import People from './People';
 import AddPerson from './AddPerson';
 import Footer from '../navigation/Footer';
 import About from './About';
+import { useEffect, useState } from 'react';
+import PeopleContainer from '../containers/PeopleContainer';
+
 
 
 function App() {
+
+  const [people, setPeople] = useState([])
+
+
+useEffect(() => {
+  fetch('http://localhost:3000/toys')
+  .then(response => response.json())
+  .then((data) => {
+    setPeople(data)
+  })
+  .catch(error => console.log(error))
+}, []);
+
   return (
     <div className="App">
       <Router>
@@ -25,7 +41,7 @@ function App() {
     </Route>
 
     <Route exact path="/people">
-      <People />
+      <PeopleContainer people={people} />
     </Route>
     <Route exact path="/addperson">
       <AddPerson />

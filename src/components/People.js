@@ -1,9 +1,13 @@
 
 
-function People(){
+function People({people}){
 
     return(
-        <div>people page</div>
+        <div>
+            
+        {people.name}
+        
+        </div>
     );
 }
 
